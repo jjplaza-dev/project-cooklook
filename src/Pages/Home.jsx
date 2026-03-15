@@ -10,6 +10,10 @@ import {
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useNavigate } from "react-router-dom";
+import heroImg from "../assets/images/choppingboard1.jpg"
+import pantryImage from "../assets/images/pantry.png"
+import ingredientsImage from "../assets/images/ingredientslist.png"
+import cookingImage from "../assets/images/cooking.png"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -111,7 +115,7 @@ export default function Home() {
           ref={elementRef} 
           className="w-full h-screen m-auto relative overflow-hidden py-20 lg:py-32 flex items-center justify-center shadow-2xl" 
           style={{
-            backgroundImage: `url("src/assets/images/choppingboard1.jpg")`, 
+            backgroundImage: `url(${heroImg})`, 
             backgroundPosition: "center",
             backgroundSize: "cover"
           }}
@@ -180,9 +184,9 @@ export default function Home() {
 
             <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
               {[
-                { title: "Check Your Pantry", img: "src/assets/images/pantry.png", desc: "Look around and see what ingredients you have available." },
-                { title: "Enter Ingredients", img: "src/assets/images/ingredientslist.png", desc: "Type them into our lightning-fast search bar above." },
-                { title: "Get Cooking", img: "src/assets/images/cooking.png", desc: "Browse perfectly matched recipes and start prepping." }
+                { title: "Check Your Pantry", img: `${pantryImage}`, desc: "Look around and see what ingredients you have available." },
+                { title: "Enter Ingredients", img: `${ingredientsImage}`, desc: "Type them into our lightning-fast search bar above." },
+                { title: "Get Cooking", img: `${cookingImage}`, desc: "Browse perfectly matched recipes and start prepping." }
               ].map((item, idx) => (
                 <div key={idx} className="step-item group">
                   <div className="w-full max-w-[280px] aspect-square mx-auto mb-8 flex items-center justify-center">
