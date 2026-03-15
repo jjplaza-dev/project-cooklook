@@ -10,6 +10,8 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import ResultsPage from "./Pages/ResultPage";
 import RecipePage from "./Pages/RecipePage";
+import FavoritesPage from "./Pages/FavoritesPage";
+import Privacy from "./Pages/Privacy";
 
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/results" element={<ResultsPage />} />
         <Route path="/recipe/:id" element={<RecipePage />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
+        <Route path="privacy" element={<Privacy />} />
       </Routes>
       <Footer />
     </Router>

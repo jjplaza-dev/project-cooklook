@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ChevronUp, Loader2, CheckCircle2 } from "lucide-react";
 import { useRecipe } from "../assets/utils/recipeService";
@@ -9,6 +9,8 @@ export default function RecipePage() {
   const [checkedItems, setCheckedItems] = useState({});
 
   const { data: recipe, isLoading, isError } = useRecipe(id);
+
+  useEffect(() => window.scrollTo(0, 0), []);
 
   const toggleCheck = (index) => {
     setCheckedItems((prev) => ({ ...prev, [index]: !prev[index] }));
@@ -44,11 +46,11 @@ export default function RecipePage() {
 
   const IngredientsList = () => (
     <div className="space-y-6">
-      <div className="flex items-center justify-between mb-8">
+      <div className="hidden md:flex items-center justify-between mb-8">
         <h2 className="text-2xl font-black text-[var(--color-accent-)] tracking-tight">
           Ingredients
         </h2>
-        <span className="text-xs font-black uppercase tracking-widest text-[var(--color-primary-)] bg-[var(--color-primary-)]/10 px-3 py-1 rounded-full">
+        <span className="hidden xl:block text-xs font-black uppercase tracking-widest text-[var(--color-primary-)] bg-[var(--color-primary-)]/10 px-3 py-1 rounded-full">
           {ingredientsList.length} Items
         </span>
       </div>
@@ -82,7 +84,7 @@ export default function RecipePage() {
   );
 
   return (
-    <main className="min-h-screen pt-24 pb-24 px-6 max-w-7xl mx-auto bg-[var(--color-background-)]">
+    <main className="min-h-screen pt-10 pb-24 px-6 max-w-7xl mx-auto bg-[var(--color-background-)]">
       <header className="mb-12 border-b border-[var(--color-secondary-)]/10 pb-8">
         <h1 className="text-4xl md:text-7xl font-black text-[var(--color-accent-)] leading-[1] tracking-tighter mb-4">
           {recipe.Title}

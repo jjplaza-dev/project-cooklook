@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Loader2, Filter } from "lucide-react";
 import { useSearchRecipes } from "../assets/utils/recipeService"; 
@@ -8,6 +8,8 @@ export default function ResultsPage() {
   const [searchParams] = useSearchParams();
   const query = searchParams.get("ingredients") || "";
   
+  useEffect(() => window.scrollTo(0, 0), []);
+
   // Pagination State
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
@@ -66,7 +68,7 @@ export default function ResultsPage() {
   }
 
   return (
-    <main className="pt-32 pb-20 px-6 max-w-7xl mx-auto min-h-screen flex flex-col bg-[var(--color-background-)]">
+    <main className="pt-10 pb-20 px-6 max-w-7xl mx-auto min-h-screen flex flex-col bg-[var(--color-background-)]">
       {/* Header Section */}
       <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>

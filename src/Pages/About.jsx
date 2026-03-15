@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <main className="min-h-screen pt-32 pb-24 px-6 max-w-6xl mx-auto bg-[var(--color-background-)]">
+    <main className="min-h-screen pt-10 pb-24 px-6 max-w-6xl mx-auto bg-[var(--color-background-)]">
       
       {/* Brand Identity Section */}
       <section className="mb-24">

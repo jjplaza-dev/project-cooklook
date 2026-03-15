@@ -31,6 +31,8 @@ export default function Home() {
       navigate(`/results?ingredients=${encodeURIComponent(queryToSearch.trim())}`);
     }
   };
+  
+  useEffect(() => window.scrollTo(0, 0), []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -102,7 +104,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-[var(--color-background-)] font-sans selection:bg-[var(--color-primary-)] selection:text-white overflow-x-hidden">
       
-      <main ref={heroRef} className="flex-grow pt-20">
+      <main ref={heroRef} className="flex-grow">
         
         {/* Hero Section */}
         <div 

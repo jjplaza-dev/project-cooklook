@@ -20,8 +20,8 @@ const Footer = () => {
         {/* Quick Links / Status */}
         <div className="flex gap-8 text-sm font-bold text-[var(--color-accent-)]/60">
           <a href="#" className="hover:text-[var(--color-primary-)] transition-colors">Recipes</a>
-          <a href="#" className="hover:text-[var(--color-primary-)] transition-colors">About</a>
-          <a href="#" className="hover:text-[var(--color-primary-)] transition-colors">Privacy</a>
+          <a href="/about" className="hover:text-[var(--color-primary-)] transition-colors">About</a>
+          <a href="/privacy" className="hover:text-[var(--color-primary-)] transition-colors">Privacy</a>
         </div>
 
         {/* Copyright */}
