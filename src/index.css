@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+
+html {
+  background-color: var(--color-background-);
+}
+
+:root {
+  --color-background-: #FDFBF7;
+  --color-accent-: #1E1B1E;
+  --color-primary-: #F59E0B;
+  --color-secondary-: #6B7280;
+}
+
 button {
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button:active {
+  transform: scale(0.95);
 }
